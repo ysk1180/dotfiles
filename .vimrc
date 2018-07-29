@@ -316,6 +316,9 @@ if has('lua')
   " スニペット集
   NeoBundle 'Shougo/neosnippet-snippets'
 endif
+"rubocop非同期実行
+NeoBundle 'w0rp/ale'
+let g:ale_sign_column_always = 1
 "--------------------------------------------------
 
 
