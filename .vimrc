@@ -319,6 +319,10 @@ endif
 "rubocop非同期実行
 NeoBundle 'w0rp/ale'
 let g:ale_sign_column_always = 1
+"自動保存
+NeoBundle 'vim-scripts/vim-auto-save'
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
 "--------------------------------------------------
 
 
