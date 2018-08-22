@@ -323,6 +323,21 @@ let g:ale_sign_column_always = 1
 NeoBundle 'vim-scripts/vim-auto-save'
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
+"保存時に自動でctagsが実行される
+NeoBundle 'soramugi/auto-ctags.vim'
+let g:auto_ctags = 1
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+"GitコマンドをVim上で操作
+"該当コード箇所のGitHub URLを返してくれるGbrowseを使用するために導入
+NeoBundle 'tpope/vim-fugitive'
+"taglist
+NeoBundle 'vim-scripts/taglist.vim'
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Auto_Open = 1
+let Tlist_Auto_Update = 1
+let Tlist_File_Fold_Auto_Close = 1
 "--------------------------------------------------
 
 
