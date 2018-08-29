@@ -340,6 +340,8 @@ let Tlist_Auto_Update = 1
 let Tlist_File_Fold_Auto_Close = 1
 "開いているファイルのコードを実行して結果を画面分割で出力できる
 NeoBundle 'thinca/vim-quickrun'
+"日時を<C-a>、<C-x>でインクリメント、デクリメントできる
+NeoBundle 'tpope/vim-speeddating'
 "--------------------------------------------------
 
 
