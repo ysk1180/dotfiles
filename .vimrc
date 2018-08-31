@@ -342,6 +342,8 @@ let Tlist_File_Fold_Auto_Close = 1
 NeoBundle 'thinca/vim-quickrun'
 "日時を<C-a>、<C-x>でインクリメント、デクリメントできる
 NeoBundle 'tpope/vim-speeddating'
+"VimでGit操作
+NeoBundle 'lambdalisue/gina.vim'
 "--------------------------------------------------
 
 
