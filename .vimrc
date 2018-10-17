@@ -327,6 +327,8 @@ let g:auto_save_in_insert_mode = 0
 NeoBundle 'soramugi/auto-ctags.vim'
 let g:auto_ctags = 1
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+"tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]>
 "GitコマンドをVim上で操作
 "該当コード箇所のGitHub URLを返してくれるGbrowseを使用するために導入
 NeoBundle 'tpope/vim-fugitive'
