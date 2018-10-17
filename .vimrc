@@ -269,7 +269,9 @@ NeoBundle 'tomasr/molokai'
 "ディレクトリツリーの表示
 NeoBundle 'scrooloose/nerdtree'
 "ファイル名でファイルを検索
-NeoBundle "ctrlpvim/ctrlp.vim"
+" NeoBundle "ctrlpvim/ctrlp.vim"
+" →ctrlpは遅かったため、fzfに変更
+
 "インデントを蛍光カラーで表示
 NeoBundle 'nathanaelkane/vim-indent-guides'
 "coffeescriptを認識させる
@@ -346,6 +348,17 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-speeddating'
 "VimでGit操作
 NeoBundle 'lambdalisue/gina.vim'
+
+" ファイル検索(fzf)
+set rtp+=/usr/local/opt/fzf
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+NeoBundle 'junegunn/fzf.vim'
+nnoremap <C-p> :FZFFileList<CR>
+command! FZFFileList call fzf#run({
+            \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
+            \ 'sink': 'e'})
+" fzfからファイルにジャンプできるようにする
+let g:fzf_buffers_jump = 1
 "--------------------------------------------------
 
 
