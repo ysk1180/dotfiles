@@ -169,7 +169,7 @@ set history=5000
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 
 "Ctags
-set tags+=~/.tags
+set tags=./.tags;
 "==========================================================
 
 
