@@ -332,8 +332,6 @@ nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 "tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
 "GitコマンドをVim上で操作
-"該当コード箇所のGitHub URLを返してくれるGbrowseを使用するために導入
-NeoBundle 'tpope/vim-fugitive'
 "taglist
 NeoBundle 'vim-scripts/taglist.vim'
 let Tlist_Show_One_File = 1
@@ -348,6 +346,8 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-speeddating'
 "VimでGit操作
 NeoBundle 'lambdalisue/gina.vim'
+"brにGitHubの該当行を開くコマンドをキーマッピング
+vnoremap br :Gina browse :<cr>
 
 " ファイル検索(fzf)
 set rtp+=/usr/local/opt/fzf
