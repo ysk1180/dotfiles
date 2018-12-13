@@ -259,7 +259,7 @@ NeoBundle 'vim-scripts/grep.vim'
 "vimのIDE化
 NeoBundle 'Shougo/unite.vim'
 "ディレクトリツリーをタブ開いた瞬間に表示
-NeoBundle 'jistr/vim-nerdtree-tabs'
+" NeoBundle 'jistr/vim-nerdtree-tabs'
 "インデントを可視化
 NeoBundle 'Yggdroot/indentLine'
 "カーソル移動を楽に
