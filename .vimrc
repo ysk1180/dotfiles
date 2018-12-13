@@ -319,9 +319,6 @@ command! FZFFileList call fzf#run({
 " fzfからファイルにジャンプできるようにする
 let g:fzf_buffers_jump = 1
 
-"文字の両側を楽々囲めるやつ
-NeoBundle 'tpope/vim-surround'
-
 "変更行の左端に記号表示
 NeoBundle 'airblade/vim-gitgutter'
 "--------------------------------------------------
