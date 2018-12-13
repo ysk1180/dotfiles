@@ -363,8 +363,8 @@ let NERDTreeShowHidden = 1
 " デフォルトでツリーを表示させる
 let g:nerdtree_tabs_open_on_console_startup=1
 
-"<C-n>でNERDTreeTabsToggleを呼び出す設定
-map <C-n> <plug>NERDTreeTabsToggle<CR>
+"<C-e>でNERDTreeを起動する設定
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 "-------------------------------------------------
 
 "--------------indent guideの設定-----------------
