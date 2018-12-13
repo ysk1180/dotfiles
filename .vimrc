@@ -258,8 +258,6 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'vim-scripts/grep.vim'
 "vimのIDE化
 NeoBundle 'Shougo/unite.vim'
-"ディレクトリツリーを表示
-NeoBundle 'scrooloose/nerdtree'
 "ディレクトリツリーをタブ開いた瞬間に表示
 NeoBundle 'jistr/vim-nerdtree-tabs'
 "インデントを可視化
