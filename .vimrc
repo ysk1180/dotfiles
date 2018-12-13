@@ -234,10 +234,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 "ディレクトリツリーの表示
 NeoBundle 'scrooloose/nerdtree'
-"ファイル名でファイルを検索
-" NeoBundle "ctrlpvim/ctrlp.vim"
-" →ctrlpは遅かったため、fzfに変更
-
 "インデントを蛍光カラーで表示
 NeoBundle 'nathanaelkane/vim-indent-guides'
 "coffeescriptを認識させる
