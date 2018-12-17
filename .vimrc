@@ -234,8 +234,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 "ディレクトリツリーの表示
 NeoBundle 'scrooloose/nerdtree'
-"インデントを蛍光カラーで表示
-NeoBundle 'nathanaelkane/vim-indent-guides'
 "coffeescriptを認識させる
 NeoBundle 'kchmck/vim-coffee-script'
 " ステータスラインの表示内容強化
