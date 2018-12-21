@@ -311,6 +311,8 @@ set rtp+=/usr/local/opt/fzf
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 NeoBundle 'junegunn/fzf.vim'
 nnoremap <C-p> :FZFFileList<CR>
+"ノーマルモードでfを押すとfzfが起動するキーマップ
+nmap f :FZFFileList<CR>
 command! FZFFileList call fzf#run({
             \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
             \ 'sink': 'e'})
