@@ -162,6 +162,9 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 
 "Ctags
 set tags=./.tags;
+
+"jjでインサートモードを抜けるキーバインド
+inoremap <silent> jj <ESC>
 "==========================================================
 
 
