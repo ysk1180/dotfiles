@@ -162,11 +162,22 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 
 "Ctags
 set tags=./.tags;
+"==========================================================
 
-"jjでインサートモードを抜けるキーバインド
+
+
+"=================独自キーバインド=========================
+"jjでインサートモードを抜ける
 inoremap <silent> jj <ESC>
 
+"qで終了
 nmap q :q<CR>
+
+"Shift + hで行の先頭
+noremap <S-h>   ^
+
+"Shift + lで行の末尾
+noremap <S-l>   $
 "==========================================================
 
 
@@ -219,7 +230,6 @@ map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 "==============================================================
-
 
 
 
