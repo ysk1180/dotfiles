@@ -189,7 +189,7 @@ noremap k gk
 
 
 "==================tab移動の設定===========================
-"---t1,t2...でタブ移動,tcでタブ新規作成,txでタブ閉じ-------
+"---t1,t2...でタブ移動,ttでタブ新規作成,tqでタブ閉じ-------
 " Anywhere SID.
 function! s:SID_PREFIX()
   return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
