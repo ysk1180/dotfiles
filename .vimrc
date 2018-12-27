@@ -48,6 +48,8 @@ autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 "==================== 検索系============================
 "検索結果をハイライト
 set hlsearch
+"ESC二回押しでハイライトを消す
+nnoremap <ESC><ESC> :nohlsearch<CR>
 
 "検索結果に大文字小文字を区別しない
 set ignorecase
