@@ -119,9 +119,8 @@ set backspace=indent,eol,start
 
 
 "=======================コピー&ペースト系=================
-" クリップボード
-set clipboard=unnamed,autoselect
-
+" クリップボード for NeoVim
+set clipboard+=unnamedplus
 
 "----------コピーした際に自動インデントでズレない設定----
 if &term =~ "xterm"
