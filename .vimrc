@@ -238,98 +238,73 @@ map <silent> [Tag]p :tabprevious<CR>
 
 
 
-"====================== Neobundle ===========================
+"====================== dein ===========================
 
-" bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+" deinで管理するディレクトリを指定
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call dein#begin(expand('~/.vim/dein'))
 
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
+" dein自体をdeinで管理
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-"---------NeoBundleで管理するプラグイン達----------
+"---------deinで管理するプラグイン達----------
 "カラースキーム
-NeoBundle 'tomasr/molokai'
+call dein#add('tomasr/molokai')
 "ディレクトリツリーの表示
-NeoBundle 'scrooloose/nerdtree'
+call dein#add('scrooloose/nerdtree')
 "coffeescriptを認識させる
-NeoBundle 'kchmck/vim-coffee-script'
+call dein#add('kchmck/vim-coffee-script')
 " ステータスラインの表示内容強化
-NeoBundle 'itchyny/lightline.vim'
+call dein#add('itchyny/lightline.vim')
 " 末尾の全角と半角の空白文字を赤くハイライト
-NeoBundle 'bronson/vim-trailing-whitespace'
-"grep機能を使いやすくする
-":Rgrep {word} で検索 [q: 前へ,  ]q: 次へ, :cc N{番号}
-NeoBundle 'vim-scripts/grep.vim'
-"vimのIDE化
-NeoBundle 'Shougo/unite.vim'
-"ディレクトリツリーをタブ開いた瞬間に表示
-" NeoBundle 'jistr/vim-nerdtree-tabs'
+call dein#add('bronson/vim-trailing-whitespace')
 "インデントを可視化
-NeoBundle 'Yggdroot/indentLine'
+call dein#add('Yggdroot/indentLine')
 "カーソル移動を楽に
-NeoBundle 'easymotion/vim-easymotion'
+call dein#add('easymotion/vim-easymotion')
 "括弧移動を拡張
-NeoBundle 'tmhedberg/matchit'
+call dein#add('tmhedberg/matchit')
 "helpの日本語化
-NeoBundle 'vim-jp/vimdoc-ja'
-"「=」入力時に自動的にスペースを確保する
-"NeoBundle 'kana/vim-smartchr'
-"HTML/CSSの作成簡略化 <C-y>, でタグ展開
-NeoBundle 'mattn/emmet-vim'
+call dein#add('vim-jp/vimdoc-ja')
 "コメントアウト gccでカレント行 gcで選択行
-NeoBundle 'tomtom/tcomment_vim'
+call dein#add('tomtom/tcomment_vim')
 "指定範囲を楽に囲む 選択範囲を、S＋囲むもの
-NeoBundle 'tpope/vim-surround'
-"true/false など、対になるものを:Switchで切り替え
-NeoBundle 'AndrewRadev/switch.vim'
-"日本語の単語移動を分節単位に
-NeoBundle 'deton/gist:5138905'
-if has('lua')
-  " コードの自動補完
-  NeoBundle 'Shougo/neocomplete.vim'
-  " スニペットの補完機能
-  NeoBundle 'Shougo/neosnippet.vim'
-  NeoBundle "Shougo/neosnippet"
-  " スニペット集
-  NeoBundle 'Shougo/neosnippet-snippets'
-endif
+call dein#add('tpope/vim-surround')
 "rubocopの非同期実行
-NeoBundle 'w0rp/ale'
+call dein#add('w0rp/ale')
 let g:ale_sign_column_always = 1
 "自動保存
-NeoBundle 'vim-scripts/vim-auto-save'
+call dein#add('vim-scripts/vim-auto-save')
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 "保存時に自動でctagsが実行される
-NeoBundle 'soramugi/auto-ctags.vim'
+call dein#add('soramugi/auto-ctags.vim')
 let g:auto_ctags = 1
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 "tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
 "GitコマンドをVim上で操作
 "taglist
-NeoBundle 'vim-scripts/taglist.vim'
+call dein#add('vim-scripts/taglist.vim')
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Auto_Update = 1
 let Tlist_File_Fold_Auto_Close = 1
 "開いているファイルのコードを実行して結果を画面分割で出力できる
-NeoBundle 'thinca/vim-quickrun'
-"日時を<C-a>、<C-x>でインクリメント、デクリメントできる
-NeoBundle 'tpope/vim-speeddating'
+call dein#add('thinca/vim-quickrun')
 "VimでGit操作
-NeoBundle 'lambdalisue/gina.vim'
+call dein#add('lambdalisue/gina.vim')
 "brにGitHubの該当行を開くコマンドをキーマッピング
 vnoremap br :Gina browse :<cr>
 
 " ファイル検索(fzf)
 set rtp+=/usr/local/opt/fzf
-NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-NeoBundle 'junegunn/fzf.vim'
+call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 nnoremap <C-p> :FZFFileList<CR>
 "ノーマルモードでfを押すとfzfが起動するキーマップ
 nmap f :FZFFileList<CR>
@@ -340,10 +315,17 @@ command! FZFFileList call fzf#run({
 let g:fzf_buffers_jump = 1
 
 "変更行の左端に記号表示
-NeoBundle 'airblade/vim-gitgutter'
+call dein#add('airblade/vim-gitgutter')
 
 "ファイル操作用
-NeoBundle 'Shougo/vimfiler'
+call dein#add('Shougo/vimfiler')
+
+"補完
+call dein#add('Shougo/deoplete.nvim')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
 "--------------------------------------------------
 
 
@@ -362,7 +344,6 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 "-------------------------------------------------
-
 
 "---------------NERDTreeの設定---------------------
 " 隠しファイルをデフォルトで表示させる
@@ -491,12 +472,13 @@ set showcmd " 打ったコマンドをステータスラインの下に表示
 "---------------------------------------------------------
 
 
-
-call neobundle#end()
+call dein#end()
 
 " Required:
 filetype plugin indent on
 
-" 未インストールのプラグインがある場合、vimrc起動時にインストール
-NeoBundleCheck
+" もし、未インストールものものがあったらインストール
+if dein#check_install()
+  call dein#install()
+endif
 "===========================================================
