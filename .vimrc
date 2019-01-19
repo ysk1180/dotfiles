@@ -347,6 +347,9 @@ endif
 call dein#add('osyo-manga/vim-anzu')
 nmap n <Plug>(anzu-n-with-echo)
 nmap N <Plug>(anzu-N-with-echo)
+
+"endを自動で入力してくれる
+call dein#add('tpope/vim-endwise')
 "--------------------------------------------------
 
 
