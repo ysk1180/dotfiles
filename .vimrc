@@ -381,40 +381,40 @@ let g:indentLine_color_term = 111
 let g:indentLine_color_gui = '#708090'
 "-------------------------------------------------
 
-"-----------------自動補完の設定--------------------
-if neobundle#is_installed('neocomplete.vim')
-  " Vim起動時にneocompleteを有効にする
-  let g:neocomplete#enable_at_startup = 1
-  " smartcase有効化. 大文字が入力されるまで大文字小文字の区別を無視する
-  let g:neocomplete#enable_smart_case = 1
-  " 3文字以上の単語に対して補完を有効にする
-  let g:neocomplete#min_keyword_length = 3
-  " 区切り文字まで補完する
-  let g:neocomplete#enable_auto_delimiter = 1
-  " 1文字目の入力から補完のポップアップを表示
-  let g:neocomplete#auto_completion_start_length = 1
-  " バックスペースで補完のポップアップを閉じる
-  inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
-  " エンターキーで補完候補の確定. スニペットの展開もエンターキーで確定・・・・・・②
-  imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
-  " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ・・・・・・③
-  imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
-  " ハイライトの色設定
-  highlight Pmenu ctermbg=6
-  highlight PmenuSel ctermbg=3
-  highlight PMenuSbar ctermbg=0
-endif
-
-"独自スニペット用のディレクトリ設定
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
-
-"snippets展開とplaceholderの移動をC-kに指定
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"-----------------補完の設定--------------------
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_camel_case = 0
+let g:deoplete#enable_ignore_case = 0
+let g:deoplete#enable_refresh_always = 0
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#max_list = 10000
+" 補完の操作
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ deoplete#manual_complete()
+" ハイライトの色設定
+highlight Pmenu ctermbg=6
+highlight PmenuSel ctermbg=3
+highlight PMenuSbar ctermbg=0
+"vim-lspを入れたら動作がかなり遅くなってしまったので一旦コメントアウト
+" call dein#add('autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ })
+" let g:LanguageClient_serverCommands = {
+"       \ 'ruby': ['solargraph', 'stdio'],
+"       \}
+" call deoplete#custom#var('omni', 'input_patterns', {
+"       \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
+"       \})
 
 if has('conceal')
   set conceallevel=2 concealcursor=niv
