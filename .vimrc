@@ -253,40 +253,54 @@ call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 "---------deinで管理するプラグイン達----------
 "カラースキーム
 call dein#add('tomasr/molokai')
+
 "ディレクトリツリーの表示
 call dein#add('scrooloose/nerdtree')
+
 "coffeescriptを認識させる
 call dein#add('kchmck/vim-coffee-script')
+
 " ステータスラインの表示内容強化
 call dein#add('itchyny/lightline.vim')
+
 " 末尾の全角と半角の空白文字を赤くハイライト
 call dein#add('bronson/vim-trailing-whitespace')
+
 "インデントを可視化
 call dein#add('Yggdroot/indentLine')
+
 "カーソル移動を楽に
 call dein#add('easymotion/vim-easymotion')
+
 "括弧移動を拡張
 call dein#add('tmhedberg/matchit')
+
 "helpの日本語化
 call dein#add('vim-jp/vimdoc-ja')
+
 "コメントアウト gccでカレント行 gcで選択行
 call dein#add('tomtom/tcomment_vim')
+
 "指定範囲を楽に囲む 選択範囲を、S＋囲むもの
 call dein#add('tpope/vim-surround')
+
 "rubocopの非同期実行
 call dein#add('w0rp/ale')
 let g:ale_sign_column_always = 1
+
 "自動保存
 call dein#add('vim-scripts/vim-auto-save')
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
+
 "保存時に自動でctagsが実行される
 call dein#add('soramugi/auto-ctags.vim')
 let g:auto_ctags = 1
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+
 "tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
-"GitコマンドをVim上で操作
+
 "taglist
 call dein#add('vim-scripts/taglist.vim')
 let Tlist_Show_One_File = 1
@@ -294,8 +308,10 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Auto_Update = 1
 let Tlist_File_Fold_Auto_Close = 1
+
 "開いているファイルのコードを実行して結果を画面分割で出力できる
 call dein#add('thinca/vim-quickrun')
+
 "VimでGit操作
 call dein#add('lambdalisue/gina.vim')
 "brにGitHubの該当行を開くコマンドをキーマッピング
