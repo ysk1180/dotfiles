@@ -342,6 +342,11 @@ if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
 endif
+
+"検索で何件目か分かる
+call dein#add('osyo-manga/vim-anzu')
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
 "--------------------------------------------------
 
 
