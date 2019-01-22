@@ -487,7 +487,7 @@ command! -bang -nargs=* Rg
 \ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
 \ <bang>0)
 " Ctrl + gで文字列検索起動
-nnoremap <C-g> :Rg<Space>
+nnoremap <C-g> :Rg<CR>
 " Ctrl + oで新しいタブで開く
 let g:fzf_action = {
 \ 'ctrl-o': 'tab split'
