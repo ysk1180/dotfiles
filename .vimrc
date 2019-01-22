@@ -307,14 +307,6 @@ vnoremap br :Gina browse :<cr>
 set rtp+=/usr/local/opt/fzf
 call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
 call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-nnoremap <C-p> :FZFFileList<CR>
-"ノーマルモードでfを押すとfzfが起動するキーマップ
-nmap f :FZFFileList<CR>
-command! FZFFileList call fzf#run({
-            \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
-            \ 'sink': 'e'})
-" fzfからファイルにジャンプできるようにする
-let g:fzf_buffers_jump = 1
 
 "変更行の左端に記号表示
 call dein#add('airblade/vim-gitgutter')
@@ -475,6 +467,31 @@ endfunction
 set laststatus=2 " ステータスラインを常に表示
 set showmode " 現在のモードを表示
 set showcmd " 打ったコマンドをステータスラインの下に表示
+"---------------------------------------------------------
+"
+"--------------- ファイル検索(fzf)の設定-------------------
+nnoremap <C-p> :FZFFileList<CR>
+"ノーマルモードでfを押すとfzfが起動するキーマップ
+nmap f :FZFFileList<CR>
+command! FZFFileList call fzf#run({
+            \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
+            \ 'sink': 'e'})
+" fzfからファイルにジャンプできるようにする
+let g:fzf_buffers_jump = 1
+
+" ファイル検索にripgrepを利用(?でプレビュー表示)
+command! -bang -nargs=* Rg
+\ call fzf#vim#grep(
+\ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+\ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+\ : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+\ <bang>0)
+" Ctrl + gで文字列検索起動
+nnoremap <C-g> :Rg<Space>
+" Ctrl + oで新しいタブで開く
+let g:fzf_action = {
+\ 'ctrl-o': 'tab split'
+\ }
 "---------------------------------------------------------
 
 call dein#end()
