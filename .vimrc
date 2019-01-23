@@ -286,6 +286,8 @@ nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 
 "tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
+"tagsジャンプで Ctrl+[ で新しいタブを開いてジャンプに
+nnoremap <C-[> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 "taglist
 call dein#add('vim-scripts/taglist.vim')
