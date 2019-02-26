@@ -127,6 +127,9 @@ if &term =~ "xterm"
 
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
+
+" ペーストモードを自動で抜ける設定
+autocmd InsertLeave * set nopaste
 "--------------------------------------------------------
 
 "==========================================================
