@@ -333,6 +333,10 @@ nmap N <Plug>(anzu-N-with-echo)
 
 "endを自動で入力してくれる
 call dein#add('tpope/vim-endwise')
+
+"カッコを七色にする
+call dein#add('luochen1990/rainbow')
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "--------------------------------------------------
 
 "--------------EasyMotionの設定-------------------
