@@ -337,6 +337,11 @@ call dein#add('tpope/vim-endwise')
 "カッコを七色にする
 call dein#add('luochen1990/rainbow')
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+" v連打で選択範囲を変える[1文字→単語→段落](<C-v>で元に戻す)
+call dein#add('terryma/vim-expand-region')
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 "--------------------------------------------------
 
 "--------------EasyMotionの設定-------------------
