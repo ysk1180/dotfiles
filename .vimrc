@@ -342,6 +342,14 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 call dein#add('terryma/vim-expand-region')
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" Vueファイルのシンタックスハイライト
+call dein#add('posva/vim-vue')
+
+" jsxのシンタックスハイライト
+call dein#add('maxmellon/vim-jsx-pretty')
+call dein#add('pangloss/vim-javascript')
+call dein#add('maxmellon/vim-jsx-pretty')
 "--------------------------------------------------
 
 "--------------EasyMotionの設定-------------------
