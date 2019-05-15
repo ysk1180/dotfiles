@@ -350,6 +350,9 @@ call dein#add('posva/vim-vue')
 call dein#add('maxmellon/vim-jsx-pretty')
 call dein#add('pangloss/vim-javascript')
 call dein#add('maxmellon/vim-jsx-pretty')
+
+" :GitMessenger でコミットを見れる
+call dein#add('rhysd/git-messenger.vim')
 "--------------------------------------------------
 
 "--------------EasyMotionの設定-------------------
