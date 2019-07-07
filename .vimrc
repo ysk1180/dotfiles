@@ -353,6 +353,9 @@ call dein#add('maxmellon/vim-jsx-pretty')
 
 " :GitMessenger でコミットを見れる
 call dein#add('rhysd/git-messenger.vim')
+
+" TypeScriptのシンタックスハイライト
+call dein#add('leafgarland/typescript-vim')
 "--------------------------------------------------
 
 "--------------EasyMotionの設定-------------------
