@@ -1,0 +1,17 @@
+[
+    {
+        "key": "shift+l",
+        "command": "cursorEnd",
+        "when": "editorFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+h",
+        "command": "cursorHome",
+        "when": "editorFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "q",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorFocus && vim.mode == 'Normal'"
+    }
+]
