@@ -275,6 +275,7 @@ call dein#add('tpope/vim-surround')
 
 "rubocopの非同期実行
 call dein#add('w0rp/ale')
+let g:ale_ruby_rubocop_executable = 'bundle' "globalなrubocopを見ないようにする
 let g:ale_sign_column_always = 1
 
 "自動保存
