@@ -1,0 +1,45 @@
+" 検索するときに大文字小文字を区別しない
+set ignorecase
+
+" 検索時に大文字を含んでいたら大/小を区別
+set smartcase
+
+" インクリメンタル検索 (検索ワードの最初の文字を入力した時点で検索が開始)
+set incsearch
+
+" 検索対象をハイライト
+set hlsearch
+
+" 行末のスペースを可視化
+set listchars=tab:^\ ,trail:~
+
+" ヤンクでクリップボードにコピー
+set clipboard+=unnamed
+
+" Escの2回押しでハイライト消去
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+
+" 行をまたいで移動
+set whichwrap=b,s,h,l,<,>,[,],~
+
+" インデント幅
+set shiftwidth=2
+
+" タブキー押下時に挿入される文字幅を指定
+set softtabstop=2
+
+"qで終了
+nmap q :q<CR>
+
+"Shift + hで行の先頭
+noremap <S-h> ^
+
+"Shift + lで行の末尾
+noremap <S-l> $
+
+"上下移動を表示行ベースに
+noremap j gj
+noremap k gk
+
+"jjでインサートモードを抜ける
+inoremap <silent> jj <ESC>
